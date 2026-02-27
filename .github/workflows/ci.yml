@@ -88,9 +88,9 @@ jobs:
 # 10. Workflow Hardening
 # Uncomment to apply least‑privilege permissions.
 # ------------------------------------------------------------
-# permissions:
-#   contents: read
-#   actions: none
+permissions:
+  contents: read
+  actions: none
 
 
 # ------------------------------------------------------------
