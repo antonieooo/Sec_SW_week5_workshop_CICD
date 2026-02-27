@@ -18,54 +18,54 @@ on:
 # 2. Basic Job Structure
 # Uncomment to create the first job.
 # ------------------------------------------------------------
-jobs:
-  build-test:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-test:
+#     runs-on: ubuntu-latest
 
-    steps:
-      # ----------------------------------------------------
-      # 3. Checkout Code
-      # ----------------------------------------------------
-      - name: Checkout repository
-        uses: actions/checkout@v4
+#     steps:
+#       # ----------------------------------------------------
+#       # 3. Checkout Code
+#       # ----------------------------------------------------
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
 
-      # ----------------------------------------------------
-      # 4. Set Up Runtime (Node.js example)
-      # ----------------------------------------------------
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+#       # ----------------------------------------------------
+#       # 4. Set Up Runtime (Node.js example)
+#       # ----------------------------------------------------
+#       - name: Set up Node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 18
 
-      # ----------------------------------------------------
-      # 5. Install Dependencies
-      # ----------------------------------------------------
-      - name: Install dependencies
-        run: npm install
+#       # ----------------------------------------------------
+#       # 5. Install Dependencies
+#       # ----------------------------------------------------
+#       - name: Install dependencies
+#         run: npm install
 
-      # ----------------------------------------------------
-      # 6. Run Tests
-      # ----------------------------------------------------
-      - name: Run tests
-        run: npm test
+#       # ----------------------------------------------------
+#       # 6. Run Tests
+#       # ----------------------------------------------------
+#       - name: Run tests
+#         run: npm test
 
 
 # ------------------------------------------------------------
 # 7. Matrix Builds (Uncomment to test multiple versions)
 # ------------------------------------------------------------
-# jobs:
-#   build-test:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node: [16, 18, 20]
-#     steps:
-#       # - uses: actions/checkout@v4
-#       # - uses: actions/setup-node@v4
-#       #   with:
-#       #     node-version: ${{ matrix.node }}
-#       # - run: npm install
-#       # - run: npm test
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16, 18, 20]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm test
 
 
 # ------------------------------------------------------------
