@@ -72,8 +72,8 @@ jobs:
 # 8. Dependency Scanning (Security)
 # Uncomment to introduce supply‑chain scanning.
 # ------------------------------------------------------------
-#       # - name: Dependency scan
-#       #   run: npm audit --audit-level=moderate
+      - name: Dependency scan
+        run: npm audit --audit-level=moderate
 
 
 # ------------------------------------------------------------
